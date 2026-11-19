@@ -24,6 +24,7 @@ This repository holds the **Windows releases only** (no source code). [**Downloa
 
 - [Download and first start](#download-and-first-start)
 - [Play across Windows and Android](#play-across-windows-and-android)
+- [New: run-ahead, rollback, replays, achievements, ambient light, motion controls](#new-run-ahead-rollback-replays-achievements-ambient-light-motion-controls)
 - [The systems and games](#the-systems-and-games)
 - [The launcher](#the-launcher)
 - [Picture: resolution, shaders, upscaling, widescreen](#picture-resolution-shaders-upscaling-widescreen)
@@ -66,6 +67,15 @@ The emulator is the same program on Windows and Android, frame for frame: both r
 ![Network play: host or join](images/network-play.jpg)
 
 Want your friends in? They can get the Android version on [Google Play](https://play.google.com/store/apps/details?id=com.albertov.model).
+
+## New: run-ahead, rollback, replays, achievements, ambient light, motion controls
+
+- **Run-ahead — less input lag.** Model 1 and Model 2 can run one or two frames ahead of what you see, silently, and show you the future: your controls answer up to 33 ms sooner, the way the arcade felt. The game itself runs exactly as without it (checked byte for byte). A setting per system and per game, and in the pause menu.
+- **Rollback network play.** In the Model 2 light gun games played on two devices (Virtua Cop 1 and 2, The House of the Dead, Gunblade NY, Rail Chase 2, Behind Enemy Lines), each device no longer waits for the other: the other player's moves are predicted and corrected the moment they arrive, so a so-so Wi-Fi feels like the same cabinet. The machines are compared all the time to stay identical.
+- **Replays you can share.** Record a session from the pause menu and the emulator keeps only your controls — about **1 KB a minute** — then plays it back exactly. Share your best Daytona lap: the file plays back the same **on another PC or on an Android phone** (and from Android back to Windows). Each game has its Replays list: watch, rename, share, delete.
+- **Achievements.** The emulator's own achievements, read from the games themselves: knock-outs, perfect rounds and winning streaks in Virtua Fighter 2 and 3, finishing and placing in Daytona USA, more to come. A notice pops up when you earn one; each game's page shows your progress with the dates. Not with cheats on.
+- **Ambient light on the LED strip.** The strip takes the colours of the picture's edges, in **every** game, like an ambient TV light — under, over or around your screen — and stays underneath the rev lights and the light gun effects. Read from the GPU without slowing it down.
+- **Motion controls.** Aim the light guns by moving your controller, and steer the driving games by tilting it, with the gyroscope of a **DualShock 4, DualSense or Switch Pro** pad on Windows — or with the sensors of your phone or handheld on Android.
 
 ## The systems and games
 
@@ -152,10 +162,13 @@ Plug an LED strip (an ESP32 running **WLED** over the network, or any **Adalight
 
 - **Two players, linked, on one PC**: two complete machines in one window, split side by side or one above the other, linked through their network boards as two cabinets in the arcade. Player 1 on the keyboard and pad 1, player 2 on pad 2.
 - **Network play on two devices**, Windows and Android in any mix (see [above](#play-across-windows-and-android)).
+- **Rollback** in the light gun games for smooth play over Wi-Fi; replays shared between PC and Android.
 - The emulator handles the **Windows firewall** for you when hosting, and shows this PC's addresses to give to the other player.
 
 ## Save states, rewind, cheats
 
+- **Replays**: record from the pause menu, about 1 KB a minute, played back exactly, shared between Windows and Android.
+- **Achievements** read from the games, with a notice and each game's list.
 - **Save states**: 8 slots per game, each **with a picture** and the time it was saved, in the pause menu and on the game's panel in the launcher ("Continue from slot"). Shift+F2 saves, Shift+F4 loads.
 - **Rewind**: hold Backspace (or the pad's left stick button) and the game goes back in time; let go and play on from there. A few minutes of history.
 - **Cheats**: the common XML cheat format, switched on and off from the pause menu.
@@ -257,6 +270,13 @@ El emulador es el mismo programa en Windows y en Android, fotograma a fotograma:
 - **Dos jugadores enlazados en un PC** (pantalla partida) y **juego en red** entre dos aparatos, Windows y Android mezclados; el emulador abre él solo el cortafuegos de Windows al hospedar.
 - **Estados guardados** (8 ranuras por juego, con imagen y hora), **rebobinado** manteniendo un botón, **trucos** en XML y las partidas guardadas de cada máquina.
 - **Menú de pausa** con casi todo en directo: estados, shader, escalador, resolución, antialiasing, forma de imagen, asistencia de dirección, fuerza del force feedback, brillo de la tira, trucos, controles, reset, y guardar cambios como ajustes propios del juego.
+- **Novedades**:
+  - **Run-ahead**: Model 1 y 2 calculan uno o dos fotogramas por delante y los controles responden hasta 33 ms antes, sin cambiar el juego.
+  - **Rollback** en el juego en red de los juegos de pistola de Model 2: ningún aparato espera al otro, las jugadas del rival se predicen y se corrigen al llegar.
+  - **Repeticiones** que se comparten: solo tus controles, unos 1 KB por minuto, y se reproducen exactas en otro PC o en un Android.
+  - **Logros** leídos de los propios juegos (Virtua Fighter 2 y 3, Daytona USA), con aviso y lista por juego.
+  - **Luz ambiental** en la tira de LEDs: los colores de los bordes de la imagen en todos los juegos.
+  - **Controles por movimiento**: apuntar con el giroscopio y girar inclinando, con el mando (DualShock 4, DualSense, Switch Pro) en Windows o con los sensores del móvil en Android.
 - **Rendimiento**: cada fotograma repartido en varios hilos y la CPU de Model 3 recompilada. Model 1 y 2 van a velocidad completa en la mayoría de PCs; Model 3 pide una CPU razonable y una GPU con Vulkan.
 
 ### Requisitos
