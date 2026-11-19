@@ -10,11 +10,13 @@ This repository holds the **Windows releases only** (no source code). [**Downloa
 >
 > **[Get it on Google Play → Sega Model Emulator 1&2&3](https://play.google.com/store/apps/details?id=com.albertov.model)**
 >
+> <img src="images/android-touch-controls.jpg" width="560" alt="The Android version with its touch controls">
+>
 > And **Windows and Android play together**: network play works between a PC and a phone, tablet or handheld on the same Wi-Fi. Race your friend's phone from your PC in Daytona USA, or fight off the zombies in The House of the Dead side by side, each on their own device.
 
 *[Leer en español ↓](#español)*
 
-![Daytona USA](images/daytona-usa.jpg)
+![Daytona USA on Windows](images/daytona-usa.jpg)
 
 ---
 
@@ -61,6 +63,8 @@ The emulator is the same program on Windows and Android, frame for frame: both r
 - **Simple to set up.** In the launcher, the *Players* button beside a game: one device *hosts* (and shows its address), the other *joins*. Nothing goes through the internet: the devices talk directly on your Wi-Fi.
 - Any mix works: PC + PC, phone + phone, **PC + phone, tablet or handheld**.
 
+![Network play: host or join](images/network-play.jpg)
+
 Want your friends in? They can get the Android version on [Google Play](https://play.google.com/store/apps/details?id=com.albertov.model).
 
 ## The systems and games
@@ -92,7 +96,9 @@ The usual MAME-style romsets work as they are, including clones and regional ver
 
 ## Picture: resolution, shaders, upscaling, widescreen
 
-![CRT Deluxe shader](images/shader-crt-deluxe.jpg)
+![The CRT Deluxe shader](images/shader-crt-deluxe.jpg)
+
+![Shader strengths and upscaler](images/settings-shaders.jpg)
 
 - **Render resolution**: the 3D drawn at a multiple of the original (496 × 384 on Model 2), up to 4K and beyond, or Auto, the largest that fits the window. Below 1x too, for slow GPUs.
 - **Multisampling (MSAA)** up to 8x and **FXAA** antialiasing, applied to the 3D before the HUD so the text stays sharp; **texture filtering** nearest, bilinear or trilinear.
@@ -109,7 +115,9 @@ The usual MAME-style romsets work as they are, including clones and regional ver
 - **Screen shape**: 4:3, stretch, integer scaling, picture scaling and shape also from the pause menu.
 - **Colour**: saturation and gamma (per channel).
 
-![Widescreen 16:9](images/widescreen-16-9.jpg)
+![Widescreen 16:9: more track on both sides, the HUD in the middle](images/widescreen-16-9.jpg)
+
+![Model 3 graphics settings](images/model3-graphics.jpg)
 
 ## Controls: keyboard, pads, wheels, light guns
 
@@ -132,7 +140,7 @@ The driving games' **drive board** — the motor in the cabinet's wheel — is e
 
 ## LED strips: WLED and Adalight
 
-![Rev lights colours](images/wled-rev-lights.jpg)
+![LED strip settings of a light gun game](images/led-strip-light-gun.jpg)
 
 Plug an LED strip (an ESP32 running **WLED** over the network, or any **Adalight** board over USB) and the games drive it:
 
@@ -273,12 +281,20 @@ El emulador es © 2026 uronito (Alberto V), todos los derechos reservados. Puede
 
 ---
 
+## Gallery · Galería
+
 <p align="center">
-  <img src="images/scud-race.jpg" width="49%" alt="Scud Race (Android)">
-  <img src="images/sega-rally.jpg" width="49%" alt="Sega Rally (Android)">
-  <img src="images/house-of-the-dead.jpg" width="49%" alt="The House of the Dead (Android)">
-  <img src="images/virtua-fighter-3.jpg" width="49%" alt="Virtua Fighter 3 (Android)">
-  <img src="images/virtua-racing.jpg" width="49%" alt="Virtua Racing (Android)">
-  <img src="images/android-touch-controls.jpg" width="49%" alt="Touch controls on Android">
+  <img src="images/scud-race.jpg" width="49%" alt="Scud Race">
+  <img src="images/daytona-usa-2.jpg" width="49%" alt="Daytona USA 2">
+  <img src="images/sega-rally-2.jpg" width="49%" alt="Sega Rally 2">
+  <img src="images/virtua-fighter-3.jpg" width="49%" alt="Virtua Fighter 3">
+  <img src="images/harley-davidson.jpg" width="49%" alt="Harley-Davidson and L.A. Riders">
+  <img src="images/the-lost-world.jpg" width="49%" alt="The Lost World">
+  <img src="images/sega-rally.jpg" width="49%" alt="Sega Rally Championship">
+  <img src="images/virtua-fighter-2.jpg" width="49%" alt="Virtua Fighter 2">
+  <img src="images/virtua-cop.jpg" width="49%" alt="Virtua Cop">
+  <img src="images/house-of-the-dead.jpg" width="49%" alt="The House of the Dead">
+  <img src="images/fighting-vipers.jpg" width="49%" alt="Fighting Vipers">
+  <img src="images/virtua-racing.jpg" width="49%" alt="Virtua Racing">
 </p>
-<p align="center"><i>Screenshots of the Android version, with its touch controls · Capturas de la versión de Android, con sus controles táctiles</i></p>
+<p align="center"><i>Screenshots of this Windows version, taken from the emulator at 1280 × 720 · Capturas de esta versión de Windows a 1280 × 720</i></p>
