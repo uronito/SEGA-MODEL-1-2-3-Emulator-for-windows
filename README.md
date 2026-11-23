@@ -61,27 +61,20 @@ Windows SmartScreen may warn the first time you run a new download from the inte
 Start a game directly, without the launcher:
 
 ```
-m2emu.exe --no-gui --fullscreen -r "D:\ROMs\Model2" daytona
+m2emu.exe --no-gui "D:\ROMs\Model2\daytona.zip"
+m2emu.exe --no-gui -r "D:\ROMs\Model2" daytona
 ```
 
-- `--no-gui` starts the game at once, `-r` is the folder with your ROM zips, and the last word is the set's name (without `.zip`).
-- `m2emu.exe --help` lists every option (`--shader crt-deluxe`, `--widescreen 16:9`, `--run-ahead 1`…).
-- In cmd, type `m2emu.exe` or `.\m2emu.exe` (not `./m2emu.exe`).
+- `--no-gui` starts the game at once, with the settings you saved in the launcher and each game's own; whatever you add on the command line goes over them (`--fullscreen`, `--shader crt-deluxe`, `--widescreen 16:9`, `--run-ahead 1`…).
+- The game can be the zip file with its path, as frontends pass it (its folder becomes the ROM folder), or a set's name with `-r <ROM folder>`.
+- `--defaults` ignores the saved settings: only the command line counts.
+- `m2emu.exe --help`, run from cmd or PowerShell, lists every option (type `m2emu.exe` or `.\m2emu.exe`, not `./m2emu.exe`).
 
 **LaunchBox** (Tools → Manage → Emulators → Add):
 
 1. Application path: `m2emu.exe`.
-2. Command-line parameters: `--no-gui --fullscreen -r "D:\ROMs\Model2"` (your ROM folder).
-3. Tick **Remove file extension and folder path**, so LaunchBox passes `daytona` rather than the zip's full path.
-
-In release 2026-11-19.2 a game started this way uses the default settings plus what you put on the command line.
-
-**Coming in the next release:**
-- the full zip path that LaunchBox and other frontends send is accepted, and its folder is used as the ROM folder;
-- `--no-gui` uses the settings you saved in the launcher, including each game's own;
-- `--help` and the program's messages show in the console when started from cmd.
-
-From then on the parameters are just `--no-gui` (plus `--fullscreen` if you like), with nothing else to tick. Use `--defaults` to ignore the saved settings.
+2. Command-line parameters: `--no-gui` (or `--no-gui --fullscreen` to always play full screen).
+3. That's it: LaunchBox passes each game's zip and the emulator finds the rest. Other frontends work the same way.
 
 ## Play across Windows and Android
 
@@ -280,7 +273,7 @@ Este repositorio contiene **solo las versiones para Windows** (sin código fuent
 
 ### Línea de comandos y frontends (LaunchBox)
 
-Para arrancar un juego sin el lanzador: `m2emu.exe --no-gui --fullscreen -r "D:\ROMs\Model2" daytona` (`-r` es la carpeta de tus ROMs y lo último el nombre del set, sin `.zip`; `m2emu.exe --help` lista todas las opciones). En **LaunchBox**: ruta `m2emu.exe`, parámetros `--no-gui --fullscreen -r "D:\ROMs\Model2"` y marca **Remove file extension and folder path**. En la próxima versión bastará con `--no-gui`: aceptará la ruta completa del zip y usará tus ajustes guardados.
+Para arrancar un juego sin el lanzador: `m2emu.exe --no-gui "D:\ROMs\Model2\daytona.zip"`, con tus ajustes guardados y los de cada juego (lo que añadas en la orden va por encima; `--defaults` ignora los guardados; `m2emu.exe --help` desde cmd lista todas las opciones). En **LaunchBox**: ruta `m2emu.exe` y parámetros `--no-gui` (o `--no-gui --fullscreen`); nada más.
 
 ### Juego cruzado entre Windows y Android
 
