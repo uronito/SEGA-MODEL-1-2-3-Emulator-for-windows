@@ -23,6 +23,7 @@ This repository holds the **Windows releases only** (no source code). [**Downloa
 ## Contents
 
 - [Download and first start](#download-and-first-start)
+- [Command line and frontends (LaunchBox)](#command-line-and-frontends-launchbox)
 - [Play across Windows and Android](#play-across-windows-and-android)
 - [New: run-ahead, rollback, replays, achievements, ambient light, motion controls](#new-run-ahead-rollback-replays-achievements-ambient-light-motion-controls)
 - [The systems and games](#the-systems-and-games)
@@ -54,6 +55,33 @@ This repository holds the **Windows releases only** (no source code). [**Downloa
 **No games are included.** Use dumps of the boards you own. The launcher checks each game's ROM files and tells you exactly which are missing.
 
 Windows SmartScreen may warn the first time you run a new download from the internet ("Windows protected your PC"): choose *More info → Run anyway*. When you host a network game the first time, Windows asks whether the emulator may use the network: allow it on private networks.
+
+## Command line and frontends (LaunchBox)
+
+Start a game directly, without the launcher:
+
+```
+m2emu.exe --no-gui --fullscreen -r "D:\ROMs\Model2" daytona
+```
+
+- `--no-gui` starts the game at once, `-r` is the folder with your ROM zips, and the last word is the set's name (without `.zip`).
+- `m2emu.exe --help` lists every option (`--shader crt-deluxe`, `--widescreen 16:9`, `--run-ahead 1`…).
+- In cmd, type `m2emu.exe` or `.\m2emu.exe` (not `./m2emu.exe`).
+
+**LaunchBox** (Tools → Manage → Emulators → Add):
+
+1. Application path: `m2emu.exe`.
+2. Command-line parameters: `--no-gui --fullscreen -r "D:\ROMs\Model2"` (your ROM folder).
+3. Tick **Remove file extension and folder path**, so LaunchBox passes `daytona` rather than the zip's full path.
+
+In release 2026-11-19.2 a game started this way uses the default settings plus what you put on the command line.
+
+**Coming in the next release:**
+- the full zip path that LaunchBox and other frontends send is accepted, and its folder is used as the ROM folder;
+- `--no-gui` uses the settings you saved in the launcher, including each game's own;
+- `--help` and the program's messages show in the console when started from cmd.
+
+From then on the parameters are just `--no-gui` (plus `--fullscreen` if you like), with nothing else to tick. Use `--defaults` to ignore the saved settings.
 
 ## Play across Windows and Android
 
@@ -249,6 +277,10 @@ Este repositorio contiene **solo las versiones para Windows** (sin código fuent
 5. Elige un juego y pulsa **Jugar**. **Esc** abre el menú de pausa.
 
 **No incluye juegos**: usa copias de placas que tengas. El lanzador comprueba los ficheros de cada juego y te dice exactamente cuál falta. Si SmartScreen avisa la primera vez ("Windows protegió tu PC"), pulsa *Más información → Ejecutar de todas formas*.
+
+### Línea de comandos y frontends (LaunchBox)
+
+Para arrancar un juego sin el lanzador: `m2emu.exe --no-gui --fullscreen -r "D:\ROMs\Model2" daytona` (`-r` es la carpeta de tus ROMs y lo último el nombre del set, sin `.zip`; `m2emu.exe --help` lista todas las opciones). En **LaunchBox**: ruta `m2emu.exe`, parámetros `--no-gui --fullscreen -r "D:\ROMs\Model2"` y marca **Remove file extension and folder path**. En la próxima versión bastará con `--no-gui`: aceptará la ruta completa del zip y usará tus ajustes guardados.
 
 ### Juego cruzado entre Windows y Android
 
