@@ -201,6 +201,8 @@ Plug an LED strip (an ESP32 running **WLED** over the network, or any **Adalight
 
 Esc (or a pad's menu button) opens a menu over the game with almost everything at hand, live: save and load states, the shader and its strengths, upscaler, resolution, antialiasing, picture shape and scaling, the steering assist, force feedback strength, LED strip brightness, cheats, controls, reset. Changes can be kept as **this game's own settings** with one tap.
 
+The cabinet's **Test** and **Service** buttons are there too, to open a game's own settings (difficulty, match time, sound, coins) without a keyboard: in the service menu, Service moves and Test chooses. They can also be given a pad button in **Controls**, and on Android they appear among the touch buttons. On the keyboard they are F2 and F1.
+
 ## Performance
 
 The emulator spreads each frame over several threads (the board, the geometry, the picture, the sound), and Model 3's CPU runs on a recompiler. Model 1 and 2 run at full speed on most PCs; Model 3 wants a reasonable CPU and a GPU with Vulkan. Vsync, frame pacing and a frame cap are settings; Model 1 and 3 can run at 60 Hz (smooth on 60 Hz screens) or the boards' exact 57.5 Hz.
@@ -295,6 +297,7 @@ El emulador es el mismo programa en Windows y en Android, fotograma a fotograma:
 - **Dos jugadores enlazados en un PC** (pantalla partida) y **juego en red** entre dos aparatos, Windows y Android mezclados; el emulador abre él solo el cortafuegos de Windows al hospedar.
 - **Estados guardados** (8 ranuras por juego, con imagen y hora), **rebobinado** manteniendo un botón, **trucos** en XML y las partidas guardadas de cada máquina.
 - **Menú de pausa** con casi todo en directo: estados, shader, escalador, resolución, antialiasing, forma de imagen, asistencia de dirección, fuerza del force feedback, brillo de la tira, trucos, controles, reset, y guardar cambios como ajustes propios del juego.
+- Botones **Test** y **Service** del mueble en el menú de pausa y asignables al mando en **Controles** (en Android, también táctiles): entras en los ajustes propios del juego (dificultad, tiempo, sonido, monedas) sin teclado. En el teclado, F2 y F1.
 - **Novedades**:
   - **Run-ahead**: Model 1 y 2 calculan uno o dos fotogramas por delante y los controles responden hasta 33 ms antes, sin cambiar el juego.
   - **Rollback** en el juego en red de los juegos de pistola de Model 2: ningún aparato espera al otro, las jugadas del rival se predicen y se corrigen al llegar.
